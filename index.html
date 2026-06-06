@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novelle | Grožio Studija Utenoje</title>
+    <meta name="description" content="Grožio studija Novelle Utenoje. Kirpimas, dažymas, šukuosenų kūrimas. J. Basanavičiaus g. 95, Utena. Tel. (0-641) 88879. Įvertinimas 5.0/5.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --ink: #1C1917;
+            --ink-mid: #44403C;
+            --ink-soft: #78716C;
+            --gold: #B8860B;
+            --gold-light: #D4A017;
+            --gold-pale: #F5E6C3;
+            --cream: #FAFAF9;
+            --warm: #F5F0EB;
+            --border: #E7E5E4;
+            --border-dark: rgba(28,25,23,0.12);
+            --shadow-sm: 0 2px 8px rgba(28,25,23,0.06);
+            --shadow-md: 0 6px 24px rgba(28,25,23,0.10);
+            --shadow-lg: 0 16px 48px rgba(28,25,23,0.14);
+            --radius: 4px;
+            --transition: 250ms ease;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cream);
+            color: var(--ink);
+            font-size: 16px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            line-height: 1.15;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ── NAV ── */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(250,250,249,0.94);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .nav-logo {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            gap: 1px;
+        }
+
+        .logo-mark {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.35rem;
+            letter-spacing: 0.14em;
+            color: var(--ink);
+            text-transform: uppercase;
+        }
+
+        .logo-sub {
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.22em;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--ink-soft);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--ink); }
+
+        .nav-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--ink);
+            color: var(--ink);
+            padding: 9px 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-decoration: none;
+            transition: background var(--transition), color var(--transition);
+            cursor: pointer;
+        }
+
+        .nav-phone:hover {
+            background: var(--ink);
+            color: var(--cream);
+        }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            background: var(--ink);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 50% at 80% 30%, rgba(184,134,11,0.10) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 40% at 10% 80%, rgba(184,134,11,0.06) 0%, transparent 60%);
+        }
+
+        .hero-line-l {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(180deg, transparent 0%, rgba(184,134,11,0.25) 40%, rgba(184,134,11,0.25) 60%, transparent 100%);
+            margin-left: 80px;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            padding: 100px 0 80px;
+        }
+
+        .hero-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .hero-eyebrow-line {
+            width: 32px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .hero-eyebrow span {
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.6rem, 4.5vw, 4rem);
+            font-weight: 400;
+            color: var(--cream);
+            letter-spacing: -0.01em;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold-light);
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            color: rgba(250,250,249,0.62);
+            line-height: 1.75;
+            max-width: 420px;
+            margin-bottom: 44px;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gold);
+            color: var(--cream);
+            padding: 15px 32px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background var(--transition), box-shadow var(--transition), transform 150ms;
+            cursor: pointer;
+        }
+
+        .btn-gold:hover {
+            background: var(--gold-light);
+            box-shadow: 0 6px 24px rgba(184,134,11,0.40);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline-light {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(250,250,249,0.25);
+            color: rgba(250,250,249,0.75);
+            padding: 14px 28px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            transition: border-color var(--transition), color var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-outline-light:hover {
+            border-color: rgba(250,250,249,0.55);
+            color: var(--cream);
+        }
+
+        .hero-badge {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 48px;
+            padding-top: 36px;
+            border-top: 1px solid rgba(250,250,249,0.1);
+        }
+
+        .badge-stars {
+            display: flex;
+            gap: 3px;
+        }
+
+        .badge-text {
+            font-size: 0.82rem;
+            color: rgba(250,250,249,0.5);
+            line-height: 1.4;
+        }
+
+        .badge-text strong {
+            display: block;
+            font-weight: 600;
+            font-size: 0.88rem;
+            color: var(--cream);
+        }
+
+        /* Hero right visual */
+        .hero-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: flex-end;
+        }
+
+        .hero-card-big {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 2px;
+            padding: 36px;
+            backdrop-filter: blur(8px);
+            width: 100%;
+            max-width: 340px;
+        }
+
+        .hcb-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--cream);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .hcb-stars { display: flex; gap: 4px; margin-bottom: 10px; }
+
+        .hcb-label {
+            font-size: 0.78rem;
+            color: rgba(250,250,249,0.45);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .hero-card-sm {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 2px;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            width: 100%;
+            max-width: 340px;
+        }
+
+        .hcs-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(184,134,11,0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .hcs-label {
+            font-size: 0.72rem;
+            color: rgba(250,250,249,0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 2px;
+        }
+
+        .hcs-val {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--cream);
+        }
+
+        /* ── DIVIDER ── */
+        .divider-gold {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--gold) 70%, transparent 100%);
+            opacity: 0.25;
+        }
+
+        /* ── SECTIONS ── */
+        section { padding: 88px 0; }
+
+        .eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .eyebrow-line { width: 28px; height: 1px; background: var(--gold); }
+
+        .eyebrow span {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .section-title {
+            font-size: clamp(1.7rem, 2.8vw, 2.5rem);
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            color: var(--ink);
+            margin-bottom: 14px;
+        }
+
+        .section-title em { font-style: italic; color: var(--gold); }
+
+        .section-desc {
+            font-size: 0.98rem;
+            color: var(--ink-soft);
+            line-height: 1.75;
+        }
+
+        /* ── SERVICES ── */
+        .services { background: var(--cream); }
+
+        .services-head {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: end;
+            margin-bottom: 60px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+        }
+
+        .svc-item {
+            background: var(--cream);
+            padding: 36px 30px;
+            transition: background var(--transition);
+            cursor: default;
+        }
+
+        .svc-item:hover { background: var(--warm); }
+
+        .svc-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--gold);
+            letter-spacing: 0.12em;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .svc-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 16px;
+        }
+
+        .svc-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--ink);
+        }
+
+        .svc-item p {
+            font-size: 0.86rem;
+            color: var(--ink-soft);
+            line-height: 1.65;
+        }
+
+        /* ── ABOUT ── */
+        .about { background: var(--warm); }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image-wrap {
+            position: relative;
+        }
+
+        .about-image-box {
+            background: var(--ink);
+            border-radius: 2px;
+            height: 460px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .about-image-inner {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 40%, rgba(184,134,11,0.12) 0%, transparent 60%);
+        }
+
+        .about-monogram {
+            font-family: 'Playfair Display', serif;
+            font-size: 9rem;
+            font-weight: 400;
+            color: rgba(250,250,249,0.06);
+            letter-spacing: -0.05em;
+            user-select: none;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-float-card {
+            position: absolute;
+            bottom: -24px;
+            right: -24px;
+            background: var(--cream);
+            border: 1px solid var(--border);
+            padding: 20px 24px;
+            box-shadow: var(--shadow-md);
+            z-index: 2;
+        }
+
+        .afc-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--ink);
+            line-height: 1;
+        }
+
+        .afc-label {
+            font-size: 0.72rem;
+            color: var(--ink-soft);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .about-content { padding-left: 12px; }
+
+        .about-pillars {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-top: 36px;
+        }
+
+        .pillar {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pillar:last-child { border-bottom: none; padding-bottom: 0; }
+
+        .pillar-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--gold);
+            line-height: 1;
+            flex-shrink: 0;
+            width: 28px;
+        }
+
+        .pillar h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            margin-bottom: 4px;
+            color: var(--ink);
+        }
+
+        .pillar p {
+            font-size: 0.84rem;
+            color: var(--ink-soft);
+            line-height: 1.65;
+        }
+
+        /* ── TESTIMONIALS ── */
+        .testimonials { background: var(--ink); }
+
+        .t-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .t-header .section-title { color: var(--cream); }
+        .t-header .section-desc { color: rgba(250,250,249,0.5); }
+        .t-header .eyebrow { justify-content: center; }
+
+        .t-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .t-card {
+            background: rgba(28,25,23,1);
+            padding: 36px 30px;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: background var(--transition);
+        }
+
+        .t-card:hover { background: rgba(40,36,32,1); }
+
+        .t-stars { display: flex; gap: 4px; margin-bottom: 20px; }
+
+        .t-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            font-style: italic;
+            color: rgba(250,250,249,0.82);
+            line-height: 1.72;
+            margin-bottom: 24px;
+        }
+
+        .t-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .t-avatar {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 0.82rem;
+            color: var(--cream);
+            flex-shrink: 0;
+        }
+
+        .t-name {
+            font-weight: 600;
+            font-size: 0.86rem;
+            color: var(--cream);
+        }
+
+        .t-meta {
+            font-size: 0.74rem;
+            color: rgba(250,250,249,0.38);
+            letter-spacing: 0.04em;
+        }
+
+        .t-score-card {
+            background: var(--gold);
+            padding: 36px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .tsc-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.6rem;
+            font-weight: 700;
+            color: var(--cream);
+            line-height: 1;
+        }
+
+        .tsc-stars { display: flex; gap: 4px; }
+
+        .tsc-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(250,250,249,0.72);
+            margin-top: 4px;
+        }
+
+        /* ── CONTACT ── */
+        .contact { background: var(--cream); }
+
+        .c-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .c-items { display: flex; flex-direction: column; gap: 0; }
+
+        .c-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .c-item:first-child { padding-top: 0; }
+        .c-item:last-child { border-bottom: none; }
+
+        .c-ico {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .c-label {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 4px;
+        }
+
+        .c-val {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--ink);
+        }
+
+        .c-val a {
+            color: inherit;
+            text-decoration: none;
+            transition: color var(--transition);
+            cursor: pointer;
+        }
+
+        .c-val a:hover { color: var(--gold); }
+
+        .hours-list { display: flex; flex-direction: column; gap: 4px; }
+
+        .h-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.87rem;
+        }
+
+        .h-day { color: var(--ink-soft); }
+        .h-time { font-weight: 500; color: var(--ink); }
+        .h-closed { color: #A8A29E; }
+
+        .hours-note {
+            margin-top: 6px;
+            font-size: 0.74rem;
+            color: var(--ink-soft);
+            font-style: italic;
+        }
+
+        .map-wrap {
+            height: 320px;
+            background: var(--warm);
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .map-wrap iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+            filter: grayscale(0.3);
+        }
+
+        /* ── CTA ── */
+        .cta-section {
+            background: var(--warm);
+            padding: 80px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cta-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .cta-text h2 {
+            font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+            font-weight: 400;
+            color: var(--ink);
+            margin-bottom: 8px;
+        }
+
+        .cta-text p {
+            font-size: 0.95rem;
+            color: var(--ink-soft);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--ink);
+            padding: 40px 0;
+        }
+
+        .f-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .f-logo .logo-mark { color: var(--cream); font-size: 1.1rem; }
+        .f-logo .logo-sub { color: var(--gold); }
+
+        .f-addr {
+            font-size: 0.78rem;
+            color: rgba(250,250,249,0.38);
+        }
+
+        .f-copy {
+            font-size: 0.74rem;
+            color: rgba(250,250,249,0.25);
+        }
+
+        /* ── FLOAT ── */
+        .float-btn {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 200;
+            background: var(--gold);
+            color: var(--cream);
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(184,134,11,0.45);
+            transition: background var(--transition), box-shadow var(--transition), transform 150ms;
+            cursor: pointer;
+        }
+
+        .float-btn:hover {
+            background: var(--gold-light);
+            box-shadow: 0 6px 28px rgba(184,134,11,0.55);
+            transform: scale(1.07);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .t-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-line-l { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-inner { grid-template-columns: 1fr; }
+            .hero-visual { display: none; }
+            .services-head { grid-template-columns: 1fr; gap: 24px; }
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .about-image-wrap { display: none; }
+            .c-grid { grid-template-columns: 1fr; gap: 40px; }
+            .t-grid { grid-template-columns: 1fr; }
+            .cta-inner { flex-direction: column; align-items: flex-start; }
+            .f-inner { flex-direction: column; }
+        }
+
+        @media (max-width: 520px) {
+            .services-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ════ NAV ════ -->
+<nav class="nav" role="navigation" aria-label="Pagrindinis meniu">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo" aria-label="Novelle grožio studija">
+                <span class="logo-mark">Novelle</span>
+                <span class="logo-sub">Grožio studija · Utena</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#paslaugos">Paslaugos</a></li>
+                <li><a href="#apie">Apie mus</a></li>
+                <li><a href="#atsiliepimai">Atsiliepimai</a></li>
+                <li><a href="#kontaktai">Kontaktai</a></li>
+            </ul>
+            <a href="tel:+37064188879" class="nav-phone" aria-label="Skambinti (0-641) 88879">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 01.02 2.18 2 2 0 012 .02h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z"/></svg>
+                (0-641) 88879
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- ════ HERO ════ -->
+<section class="hero" aria-labelledby="hero-h">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-line-l" aria-hidden="true"></div>
+    <div class="container">
+        <div class="hero-inner">
+            <div>
+                <div class="hero-eyebrow" aria-hidden="true">
+                    <div class="hero-eyebrow-line"></div>
+                    <span>J. Basanavičiaus g. 95, Utena</span>
+                </div>
+                <h1 id="hero-h">Kur grožis<br>tampa <em>menu</em></h1>
+                <p class="hero-desc">Grožio studija Novelle — vieta, kur kiekvienas vizitas tampa malonumu. Profesionalus plaukų kirpimas, spalvinimas ir stilizavimas Utenoje.</p>
+                <div class="hero-actions">
+                    <a href="tel:+37064188879" class="btn-gold" aria-label="Skambinti (0-641) 88879">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 01.02 2.18 2 2 0 012 .02h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z"/></svg>
+                        Rezervuoti vizitą
+                    </a>
+                    <a href="#paslaugos" class="btn-outline-light">
+                        Mūsų paslaugos
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+                <div class="hero-badge">
+                    <div class="badge-stars" aria-label="5 žvaigždutės iš 5">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="#D4A017" stroke="#D4A017" stroke-width="0.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="#D4A017" stroke="#D4A017" stroke-width="0.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="#D4A017" stroke="#D4A017" stroke-width="0.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="#D4A017" stroke="#D4A017" stroke-width="0.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="#D4A017" stroke="#D4A017" stroke-width="0.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <div class="badge-text">
+                        <strong>5.0 / 5.0</strong>
+                        14 atsiliepimų · Google Maps
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual" aria-hidden="true">
+                <div class="hero-card-big">
+                    <div class="hcb-num">5.0</div>
+                    <div class="hcb-stars">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A017" stroke="#D4A017" stroke-width="0.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A017" stroke="#D4A017" stroke-width="0.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A017" stroke="#D4A017" stroke-width="0.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A017" stroke="#D4A017" stroke-width="0.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A017" stroke="#D4A017" stroke-width="0.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <div class="hcb-label">Tobulas įvertinimas</div>
+                </div>
+                <div class="hero-card-sm">
+                    <div class="hcs-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div>
+                        <div class="hcs-label">Atidaroma</div>
+                        <div class="hcs-val">Nuo 8:00 ryto</div>
+                    </div>
+                </div>
+                <div class="hero-card-sm">
+                    <div class="hcs-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div>
+                        <div class="hcs-label">Adresas</div>
+                        <div class="hcs-val">J. Basanavičiaus g. 95</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider-gold"></div>
+
+<!-- ════ SERVICES ════ -->
+<section class="services" id="paslaugos" aria-labelledby="svc-h">
+    <div class="container">
+        <div class="services-head">
+            <div>
+                <div class="eyebrow">
+                    <div class="eyebrow-line"></div>
+                    <span>Paslaugos</span>
+                </div>
+                <h2 class="section-title" id="svc-h">Profesionalus<br><em>plaukų menas</em></h2>
+            </div>
+            <p class="section-desc">Kiekvienas vizitas pritaikytas jūsų individualiam stiliui. Dirbame su kokybiškomis medžiagomis ir naujausiomis technikomis.</p>
+        </div>
+        <div class="services-grid">
+
+            <div class="svc-item">
+                <span class="svc-num">01</span>
+                <svg class="svc-icon" viewBox="0 0 40 40" fill="none" stroke="#B8860B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20 8 C14 8 10 13 10 18 C10 24 14 28 20 28 C26 28 30 24 30 18 C30 13 26 8 20 8Z"/>
+                    <path d="M16 28 L14 36 M24 28 L26 36"/>
+                    <path d="M14 20 C14 20 17 23 20 23 C23 23 26 20 26 20"/>
+                </svg>
+                <h3>Plaukų kirpimas</h3>
+                <p>Klasikinis ir modernus kirpimas vyrams bei moterims. Ignas ir komanda tiksliai įgyvendina jūsų norimą stilių.</p>
+            </div>
+
+            <div class="svc-item">
+                <span class="svc-num">02</span>
+                <svg class="svc-icon" viewBox="0 0 40 40" fill="none" stroke="#B8860B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="20" cy="16" r="8"/>
+                    <path d="M12 28 C12 28 14 24 20 24 C26 24 28 28 28 28"/>
+                    <path d="M8 32 L32 32"/>
+                    <path d="M16 14 C16 14 18 17 20 17 C22 17 24 14 24 14"/>
+                </svg>
+                <h3>Plaukų spalvinimas</h3>
+                <p>Vienspalvis, balayage, ombre, highlights — moderni spalvos technika, kuri suteikia natūralų ir elegantišką rezultatą.</p>
+            </div>
+
+            <div class="svc-item">
+                <span class="svc-num">03</span>
+                <svg class="svc-icon" viewBox="0 0 40 40" fill="none" stroke="#B8860B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M10 30 C10 20 15 12 20 10 C25 12 30 20 30 30"/>
+                    <path d="M15 30 C15 22 17 16 20 14 C23 16 25 22 25 30"/>
+                    <path d="M10 30 L30 30"/>
+                </svg>
+                <h3>Šukuosenų kūrimas</h3>
+                <p>Kasdienės šukuosenos, proginiai kirpimai, vestuviniai stiliai — sukuriame įvaizdį, kurį mėgstate.</p>
+            </div>
+
+            <div class="svc-item">
+                <span class="svc-num">04</span>
+                <svg class="svc-icon" viewBox="0 0 40 40" fill="none" stroke="#B8860B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 20 C12 14 16 10 20 10 C24 10 28 14 28 20"/>
+                    <path d="M8 22 C8 22 12 24 20 24 C28 24 32 22 32 22"/>
+                    <path d="M14 28 C14 28 16 32 20 32 C24 32 26 28 26 28"/>
+                </svg>
+                <h3>Plaukų priežiūra</h3>
+                <p>Maitinančios, drėkinančios ir atkuriančios plaukų procedūros. Plaukai tampa stipresni ir sveikesni.</p>
+            </div>
+
+            <div class="svc-item">
+                <span class="svc-num">05</span>
+                <svg class="svc-icon" viewBox="0 0 40 40" fill="none" stroke="#B8860B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <ellipse cx="20" cy="18" rx="10" ry="6"/>
+                    <path d="M10 18 L10 26 C10 28 14 30 20 30 C26 30 30 28 30 26 L30 18"/>
+                    <path d="M16 24 C16 24 18 26 20 26 C22 26 24 24 24 24"/>
+                </svg>
+                <h3>Antakių dizainas</h3>
+                <p>Antakių formavimas ir koregavimas — pabrėžiame jūsų veido bruožus profesionaliai ir tiksliai.</p>
+            </div>
+
+            <div class="svc-item" style="background: var(--warm);">
+                <span class="svc-num">—</span>
+                <div style="margin-top:16px;">
+                    <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;color:var(--ink);margin-bottom:12px;font-style:italic;">Kitos paslaugos</div>
+                    <p style="font-size:0.86rem;color:var(--ink-soft);line-height:1.65;margin-bottom:20px;">Norėdami sužinoti apie papildomas paslaugas ar rezervuoti laiką — skambinkite.</p>
+                    <a href="tel:+37064188879" style="display:inline-flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;transition:color 250ms;cursor:pointer;" onmouseover="this.style.color='#D4A017'" onmouseout="this.style.color='#B8860B'">
+                        Skambinti
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="divider-gold"></div>
+
+<!-- ════ ABOUT ════ -->
+<section class="about" id="apie" aria-labelledby="about-h">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-image-wrap" aria-hidden="true">
+                <div class="about-image-box">
+                    <div class="about-image-inner"></div>
+                    <div class="about-monogram">N</div>
+                </div>
+                <div class="about-float-card">
+                    <div class="afc-num">14</div>
+                    <div class="afc-label">5★ atsiliepimai</div>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <div class="eyebrow">
+                    <div class="eyebrow-line"></div>
+                    <span>Apie mus</span>
+                </div>
+                <h2 class="section-title" id="about-h">Studija, kur<br><em>jautiesi gerai</em></h2>
+                <p class="section-desc" style="margin-bottom:0;">Novelle — tai ne tik kirpykla. Tai vieta, kur galite laisvai pašnekėti, atsipalaiduoti ir išeiti jausdamiesi geriau nei atėję.</p>
+
+                <div class="about-pillars">
+                    <div class="pillar">
+                        <div class="pillar-num">I</div>
+                        <div>
+                            <h4>Ignas — jūsų kirpėjas</h4>
+                            <p>Patyrę klientai rekomenduoja Igną kaip puikų kirpėją, kuris tiksliai įgyvendina kiekvieną norą ir sukuria tinkamą atmosferą.</p>
+                        </div>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-num">II</div>
+                        <div>
+                            <h4>Maloni, atvira atmosfera</h4>
+                            <p>„Kirpėjas tikrai malonus, galima laisvai pašnekėti" — tai ne tik paslauga, bet malonus pokalbis ir gera nuotaika.</p>
+                        </div>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-num">III</div>
+                        <div>
+                            <h4>Tobulas įvertinimas</h4>
+                            <p>5.0 iš 5.0 — 14 klientų įvertino mūsų darbą aukščiausiu balu. Tai mūsų didžiausias pasididžiavimas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider-gold"></div>
+
+<!-- ════ TESTIMONIALS ════ -->
+<section class="testimonials" id="atsiliepimai" aria-labelledby="t-h">
+    <div class="container">
+        <div class="t-header">
+            <div class="eyebrow">
+                <div class="eyebrow-line"></div>
+                <span>Atsiliepimai</span>
+            </div>
+            <h2 class="section-title" id="t-h">Ką sako <em>mūsų klientai</em></h2>
+            <p class="section-desc">Tikri atsiliepimai iš Google Maps — nekoreguoti.</p>
+        </div>
+        <div class="t-grid">
+
+            <div class="t-card">
+                <div class="t-stars" aria-label="5 žvaigždutės">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A017" stroke="#D4A017" stroke-width="0.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A017" stroke="#D4A017" stroke-width="0.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A017" stroke="#D4A017" stroke-width="0.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A017" stroke="#D4A017" stroke-width="0.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A017" stroke="#D4A017" stroke-width="0.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <p class="t-quote">"Salonas labai gražus, vyras labai gerai apkirptas, net nuotaika buvo tinkama, kirpėjas tikrai malonus, galima laisvai pašnekėti. Rekomenduočiau šį saloną tiems, kurie nori jaustis gerai dėl savęs ir savo išvaizdos."</p>
+                <div class="t-author">
+                    <div class="t-avatar" aria-hidden="true">A</div>
+                    <div>
+                        <div class="t-name">Aiva Rydze</div>
+                        <div class="t-meta">Google Maps · prieš 3 m.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="t-score-card" aria-label="5.0 įvertinimas">
+                <div class="tsc-num">5.0</div>
+                <div class="tsc-stars" aria-label="5 žvaigždutės iš 5">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(250,250,249,0.9)" stroke="rgba(250,250,249,0.9)" stroke-width="0.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(250,250,249,0.9)" stroke="rgba(250,250,249,0.9)" stroke-width="0.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(250,250,249,0.9)" stroke="rgba(250,250,249,0.9)" stroke-width="0.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(250,250,249,0.9)" stroke="rgba(250,250,249,0.9)" stroke-width="0.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(250,250,249,0.9)" stroke="rgba(250,250,249,0.9)" stroke-width="0.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <div class="tsc-label">14 atsiliepimų · Google Maps</div>
+            </div>
+
+            <div class="t-card">
+                <div class="t-stars" aria-label="5 žvaigždutės">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A017" stroke="#D4A017" stroke-width="0.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A017" stroke="#D4A017" stroke-width="0.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A017" stroke="#D4A017" stroke-width="0.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A017" stroke="#D4A017" stroke-width="0.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A017" stroke="#D4A017" stroke-width="0.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <p class="t-quote">"Ignas yra puikus kirpėjas. Rekomenduoju."</p>
+                <div class="t-author">
+                    <div class="t-avatar" style="background:var(--ink-mid);" aria-hidden="true">Ž</div>
+                    <div>
+                        <div class="t-name">Žilvinas Tumosa</div>
+                        <div class="t-meta">Google Maps · Local Guide · prieš 1 m.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="divider-gold"></div>
+
+<!-- ════ CONTACT ════ -->
+<section class="contact" id="kontaktai" aria-labelledby="c-h">
+    <div class="container">
+        <div style="margin-bottom:48px;">
+            <div class="eyebrow">
+                <div class="eyebrow-line"></div>
+                <span>Kontaktai</span>
+            </div>
+            <h2 class="section-title" id="c-h">Raskite mus <em>Utenoje</em></h2>
+        </div>
+        <div class="c-grid">
+            <div class="c-items">
+                <div class="c-item">
+                    <div class="c-ico" aria-hidden="true">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 01.02 2.18 2 2 0 012 .02h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z"/></svg>
+                    </div>
+                    <div>
+                        <div class="c-label">Telefonas</div>
+                        <div class="c-val"><a href="tel:+37064188879">(0-641) 88879</a></div>
+                    </div>
+                </div>
+                <div class="c-item">
+                    <div class="c-ico" aria-hidden="true">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div>
+                        <div class="c-label">Adresas</div>
+                        <div class="c-val"><a href="https://maps.google.com/?q=J.+Basanavičiaus+g.+95,+Utena" target="_blank" rel="noopener">J. Basanavičiaus g. 95, Utena</a></div>
+                    </div>
+                </div>
+                <div class="c-item">
+                    <div class="c-ico" aria-hidden="true">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div>
+                        <div class="c-label">Darbo laikas</div>
+                        <div class="hours-list" style="margin-top:2px;">
+                            <div class="h-row">
+                                <span class="h-day">Pirm. – Penkt.</span>
+                                <span class="h-time">nuo 8:00</span>
+                            </div>
+                            <div class="h-row">
+                                <span class="h-day">Šeštadienis</span>
+                                <span class="h-time">nuo 8:00</span>
+                            </div>
+                            <div class="h-row">
+                                <span class="h-day">Sekmadienis</span>
+                                <span class="h-closed">Skambinkite</span>
+                            </div>
+                        </div>
+                        <div class="hours-note">* Tikslesniam laikui skambinkite.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-wrap">
+                <iframe
+                    src="https://maps.google.com/maps?q=J.+Basanavičiaus+g.+95,+Utena,+Lietuva&output=embed"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Novelle grožio studija žemėlapyje — J. Basanavičiaus g. 95, Utena">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════ CTA ════ -->
+<section class="cta-section" aria-label="Rezervacija">
+    <div class="container">
+        <div class="cta-inner">
+            <div class="cta-text">
+                <h2>Pasiruošę atrodyti<br><em style="font-family:'Playfair Display',serif;font-style:italic;color:var(--gold);">puikiai?</em></h2>
+                <p>Paskambinkite ir rezervuokite laiką — dirbame nuo 8:00 ryto.</p>
+            </div>
+            <a href="tel:+37064188879" class="btn-gold" aria-label="Skambinti (0-641) 88879">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 01.02 2.18 2 2 0 012 .02h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z"/></svg>
+                (0-641) 88879
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+    <div class="container">
+        <div class="f-inner">
+            <a href="#" class="nav-logo f-logo" aria-label="Novelle">
+                <span class="logo-mark">Novelle</span>
+                <span class="logo-sub">Grožio studija · Utena</span>
+            </a>
+            <div class="f-addr">J. Basanavičiaus g. 95, Utena, 28228 · Tel. (0-641) 88879</div>
+            <div class="f-copy">© 2024 Novelle. Visos teisės saugomos.</div>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating call -->
+<a href="tel:+37064188879" class="float-btn" aria-label="Skambinti Novelle" title="Skambinti">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 01.02 2.18 2 2 0 012 .02h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z"/></svg>
+</a>
+
+</body>
+</html>
