@@ -73,8 +73,22 @@
 
         .nav-logo {
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
+        }
+
+        .nav-logo-img {
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+            flex-shrink: 0;
+        }
+
+        .nav-logo-text {
+            display: flex;
+            flex-direction: column;
             gap: 1px;
         }
 
@@ -299,6 +313,26 @@
             align-items: flex-end;
         }
 
+        .hero-logo-card {
+            width: 100%;
+            max-width: 340px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 2px;
+            padding: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-logo-card img {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            filter: brightness(0) saturate(100%) invert(62%) sepia(80%) saturate(500%) hue-rotate(5deg) brightness(85%);
+        }
+
         .hero-card-big {
             background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.1);
@@ -496,15 +530,13 @@
                 radial-gradient(ellipse 80% 60% at 50% 40%, rgba(184,134,11,0.12) 0%, transparent 60%);
         }
 
-        .about-monogram {
-            font-family: 'Playfair Display', serif;
-            font-size: 9rem;
-            font-weight: 400;
-            color: rgba(250,250,249,0.06);
-            letter-spacing: -0.05em;
-            user-select: none;
+        .about-logo-big {
+            width: 260px;
+            height: 260px;
+            object-fit: contain;
             position: relative;
             z-index: 1;
+            filter: brightness(0) saturate(100%) invert(62%) sepia(80%) saturate(500%) hue-rotate(5deg) brightness(85%) opacity(0.55);
         }
 
         .about-float-card {
@@ -886,8 +918,11 @@
     <div class="container">
         <div class="nav-inner">
             <a href="#" class="nav-logo" aria-label="Novelle grožio studija">
-                <span class="logo-mark">Novelle</span>
-                <span class="logo-sub">Grožio studija · Utena</span>
+                <img src="logo.jpg" alt="Novelle logotipas" class="nav-logo-img">
+                <div class="nav-logo-text">
+                    <span class="logo-mark">Novelle</span>
+                    <span class="logo-sub">Grožio studija · Utena</span>
+                </div>
             </a>
             <ul class="nav-links">
                 <li><a href="#paslaugos">Paslaugos</a></li>
@@ -942,6 +977,9 @@
             </div>
 
             <div class="hero-visual" aria-hidden="true">
+                <div class="hero-logo-card">
+                    <img src="logo.jpg" alt="Novelle logotipas">
+                </div>
                 <div class="hero-card-big">
                     <div class="hcb-num">5.0</div>
                     <div class="hcb-stars">
@@ -1074,7 +1112,7 @@
             <div class="about-image-wrap" aria-hidden="true">
                 <div class="about-image-box">
                     <div class="about-image-inner"></div>
-                    <div class="about-monogram">N</div>
+                    <img src="logo.jpg" alt="" class="about-logo-big" aria-hidden="true">
                 </div>
                 <div class="about-float-card">
                     <div class="afc-num">14</div>
@@ -1276,8 +1314,11 @@
     <div class="container">
         <div class="f-inner">
             <a href="#" class="nav-logo f-logo" aria-label="Novelle">
-                <span class="logo-mark">Novelle</span>
-                <span class="logo-sub">Grožio studija · Utena</span>
+                <img src="logo.jpg" alt="Novelle logotipas" class="nav-logo-img" style="filter: brightness(0) saturate(100%) invert(62%) sepia(80%) saturate(500%) hue-rotate(5deg) brightness(95%);">
+                <div class="nav-logo-text">
+                    <span class="logo-mark">Novelle</span>
+                    <span class="logo-sub">Grožio studija · Utena</span>
+                </div>
             </a>
             <div class="f-addr">J. Basanavičiaus g. 95, Utena, 28228 · Tel. (0-641) 88879</div>
             <div class="f-copy">© 2024 Novelle. Visos teisės saugomos.</div>
